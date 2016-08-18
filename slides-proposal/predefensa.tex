@@ -1,0 +1,136 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{import}
+\usepackage{caption,subfig}
+\usepackage{arydshln}
+\usepackage{longtable}
+\captionsetup[subfigure]{labelformat=empty,font=footnotesize}
+
+\newcommand{\sinc}{{\bf\textcolor{blue}{s}{\i}nc}(\textcolor{red}{$i$})}
+\newcommand{\TITLE}
+{
+	Índices para validación de algoritmos de clustering
+}
+
+\newcommand{\FM}{FM}
+\newcommand{\paperindex}{$\mathcal{OC}$}
+\newcommand{\kmeans}{$k$-means}
+\newcommand{\cartel}[2]{{\sffamily\slshape \colorbox{red}{#1:}{\ #2}}}
+\newcommand{\alto}{7em}
+\newcommand{\ancho}{7em}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+
+\mode<presentation>
+{
+  %\usetheme{Warsaw}
+  %\usetheme{Berlin}
+  \usetheme{Darmstadt}
+  \usefonttheme[onlymath]{serif}
+	\setbeamertemplate{footline}
+  {
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}
+      {\usebeamerfont{author in head/foot}\insertshortauthor} \hfill   {\insertframenumber/\inserttotalframenumber}%
+    \end{beamercolorbox}
+  }
+  \setbeamercovered{highly dynamic}
+}
+
+\usepackage[font=Times,timeinterval=20, timeduration=2.0, timedeath=0, fillcolorwarningsecond=white!60!yellow,
+timewarningfirst=50,timewarningsecond=80]{tdclock}
+
+
+\title[Pre--defensa Tesis Doctoral]{\TITLE}
+\vspace*{-2mm}
+\author[David N. Campo - (CIDISI - \sinc - CONICET)]{ 
+		Ing. David N. Campo \\[2pt]
+		Director: Dra. Georgina Stegmayer \\[2pt]
+		Co--Director: Dr. Diego H. Milone \\[2pt]
+}
+
+\date{}
+
+\logo{\includegraphics[height = 0.30cm, angle = 90]{logos/logo_sinc.pdf}
+\includegraphics[height = 0.28cm, angle = 90]{logos/logo_cidisi.png}\vspace{-5pt}}
+
+\AtBeginSection[]
+{
+	\frame
+	{
+		\frametitle{Organización}
+		\tableofcontents[currentsection,hideothersubsections]
+	}
+}
+
+
+\begin{document}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Title
+\begin{frame}[plain]	
+  \titlepage{}	
+	\vspace{-2cm}
+	\begin{center}
+	\begin{rmfamily}
+		\begin{normalsize}
+			\tiny Pre--defensa Tesis Doctoral \\[1mm]
+			\tiny Doctorado en Ingeniería -- \sinc -- FICH -- INTEC \\[0.3mm]
+			\tiny Mención: \textit{Inteligencia Computacional, Señales y Sistemas}
+		\end{normalsize}
+	\end{rmfamily}
+\end{center}
+	 
+	\begin{columns}
+		\begin{column}{30mm}
+		\vspace{-2mm}
+			\begin{center}
+					\includegraphics[scale = 0.75]{logos/logo_sinc.pdf}\\
+					\includegraphics[scale = 0.15]{logos/fichunl_vect.pdf}
+			\end{center}
+		\end{column}
+
+		\hspace*{-20mm}
+		
+		\begin{column}{30mm}
+			\begin{center}
+					\includegraphics[scale=0.15]{logos/logo_conicet.pdf}
+			\end{center}
+		\end{column}
+		
+		\hspace*{-20mm}
+		
+		\begin{column}{30mm}
+		\vspace{-1mm}
+			\begin{center}
+					\includegraphics[scale=0.10]{logos/logo_cidisi.png}\\[3pt]
+					\includegraphics[scale=0.15]{logos/logo_UTN_vect.pdf}
+			\end{center}
+		\end{column}
+
+	\end{columns}
+\end{frame}
+
+% TOC
+\begin{frame}[plain]
+  \frametitle{Contenido}  
+  \begin{scriptsize}
+  \tableofcontents
+  \end{scriptsize}
+\end{frame}
+
+
+\subimport{antecedentes/}{antecedentes}
+\subimport{objetivos/}{objetivos}
+\subimport{proposal/}{prop_trab}
+\subimport{proposal/}{proposal} %OC
+\subimport{experiments/}{results} %OC experiments
+\subimport{conclusions/}{conclusions} 
+
+\end{document}
